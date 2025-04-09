@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym/Fitness App</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #555;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .tech-stack, .challenges, .cta, .media {
+            margin-top: 20px;
+        }
+        .tech-stack ul, .challenges ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .cta p {
+            margin-top: 10px;
+        }
+        .media img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .media img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 80%;
+            height: auto;
+            margin: auto;
+            display: block;
+        }
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal .close:hover {
+            color: #ccc;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .media-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    
+<div class="container">
+    <div class="logo">
+        <img src="img/SC/Asset 2.png" alt="Gym/Fitness App Logo">
+    </div>
+
+    <h1>Gym/Fitness App</h1>
+
+    <section>
+        <h2>Description</h2>
+        <p>A comprehensive gym management app built with Flutter, Dart, and Firebase. This app allows users to subscribe or renew their gym membership, monitor their attendance, layout their workout regimen, sign up for available classes, book trainers, and receive notification reminders. Users can also update their profiles. The admin section provides tools to manage user data, add updates, and monitor daily attendance.</p>
+    </section>
+
+    <section class="tech-stack">
+        <h2>Tech Stack</h2>
+        <ul>
+            <li><strong>Frontend:</strong> Flutter, Dart</li>
+            <li><strong>Backend:</strong> Firebase</li>
+            <li><strong>Version Control:</strong> GitHub</li>
+        </ul>
+        <p><strong>GitHub Repository:</strong> <a href="https://github.com/iokolie/Gym-App-New" target="_blank">View Code on GitHub</a></p>
+    </section>
+
+    <section class="challenges">
+        <h2>Challenges Faced</h2>
+        <ul>
+            <li><strong>State Management:</strong> Managing the state of multiple features such as workout plans, class bookings, and notifications was challenging. I had to carefully structure the state management to ensure the app remained responsive and efficient as the user interacted with various parts of the app.</li>
+            <li><strong>Firebase Integration:</strong> Integrating Firebase to handle real-time data updates, authentication, and notification services required a deep understanding of both Firebase and how it interacts with Flutter. Ensuring secure data handling, especially for user profiles and payment information, was a critical part of the development process.</li>
+            <li><strong>User Experience Design:</strong> Designing an intuitive user interface that caters to both gym members and administrators required several iterations. Balancing functionality with ease of use, especially for non-tech-savvy users, was a key focus.</li>
+            <li><strong>Scalability:</strong> Building the app to handle a growing number of users and data without compromising performance posed challenges in database structuring and API optimization. Implementing efficient querying and data retrieval processes was essential to maintaining app speed and reliability.</li>
+        </ul>
+    </section>
+
+    
+
+    <section class="media">
+        <h2>Screenshots</h2>
+        <div class="media-grid">
+            <img src="img/SC/IMG-20240827-WA0029.jpg" alt="Screenshot 1" class="modal-img">
+            <img src="img/SC/IMG-20240827-WA0027.jpg" alt="Screenshot 2" class="modal-img">
+            <img src="img/SC/WhatsApp Image 2024-08-27 at 17.57.39_1ca41ca1.jpg" alt="Screenshot 3" class="modal-img">
+            <img src="img/SC/IMG-20240827-WA0030.jpg" alt="Screenshot 4" class="modal-img">
+            <img src="img/SC/IMG-20240827-WA0026.jpg" alt="Screenshot 5" class="modal-img">
+            <img src="img/SC/IMG-20240827-WA0032.jpg" alt="Screenshot 6" class="modal-img">
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+
+    <section class="cta">
+        <h2>Call to Action</h2>
+        <p>Feel free to explore the code on GitHub, and I welcome any feedback or contributions. If you're interested in seeing the app in action, check out the demo videos (which I’ll provide) that highlight key features. If you have any questions or would like to collaborate on similar projects, please don’t hesitate to reach out!</p>
+    </section>
+</div>
+
+<!-- Modal for enlarged images -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var img = document.querySelectorAll(".modal-img");
+    var modalImg = document.getElementById("img01");
+    var span = document.getElementsByClassName("close")[0];
+
+    img.forEach(function(image) {
+        image.onclick = function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+        }
+    });
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

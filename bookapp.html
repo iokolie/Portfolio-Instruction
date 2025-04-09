@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store App</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #555;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .tech-stack, .challenges, .cta, .media {
+            margin-top: 20px;
+        }
+        .tech-stack ul, .challenges ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .cta p {
+            margin-top: 10px;
+        }
+        .media img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .media img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 80%;
+            height: auto;
+            margin: auto;
+            display: block;
+        }
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal .close:hover {
+            color: #ccc;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .media-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Book Store App</h1>
+
+    <section>
+        <h2>Description</h2>
+        <p>A versatile book store app built with Flutter, Dart, and Firebase. This app allows users to browse a wide range of available books, purchase them, and have them shipped directly to their address. Users can also create a wishlist of books, which will notify them when those books become available. Admins have the ability to add or delete books based on availability. The app also includes features for managing user accounts and tracking orders.</p>
+    </section>
+
+    <section class="tech-stack">
+        <h2>Tech Stack</h2>
+        <ul>
+            <li><strong>Frontend:</strong> Flutter, Dart</li>
+            <li><strong>Backend:</strong> Firebase</li>
+            <li><strong>Version Control:</strong> GitHub</li>
+        </ul>
+        <p><strong>GitHub Repository:</strong> <a href="https://github.com/iokolie/Book-Store" target="_blank">View Code on GitHub</a></p>
+    </section>
+
+    <section class="challenges">
+        <h2>Challenges Faced</h2>
+        <ul>
+            <li><strong>Inventory Management:</strong> Implementing a robust system to manage book availability and updates in real-time was challenging. Ensuring that the app reflects accurate inventory levels and handles out-of-stock scenarios required careful planning and integration with Firebase.</li>
+            <li><strong>Wishlist Notifications:</strong> Developing a notification system to alert users when books from their wishlist become available involved integrating Firebase Cloud Messaging and handling various scenarios where users might want to be notified.</li>
+            <li><strong>UI/UX Design:</strong> Creating an intuitive and visually appealing interface that enhances the shopping experience for users and provides easy management options for admins required extensive design and usability testing.</li>
+            <li><strong>Order Processing:</strong> Implementing a secure and efficient order processing system to handle transactions, manage shipping, and track order status presented technical and logistical challenges, particularly with integrating payment gateways and ensuring data security.</li>
+        </ul>
+    </section>
+
+    <section class="media">
+        <h2>Screenshots</h2>
+        <div class="media-grid">
+            <img src="img/BookApp/IMG-20240827-WA0041.jpg" alt="Screenshot 3" class="modal-img">
+            <img src="img/BookApp/IMG-20240827-WA0042.jpg" alt="Screenshot 5" class="modal-img">
+            <img src="img/BookApp/IMG-20240827-WA0043.jpg" alt="Screenshot 6" class="modal-img">
+            <img src="img/BookApp/IMG-20240827-WA0045.jpg" alt="Screenshot 1" class="modal-img">
+            <img src="img/BookApp/IMG-20240827-WA0040.jpg" alt="Screenshot 2" class="modal-img">
+            <img src="img/BookApp/IMG-20240827-WA0044.jpg" alt="Screenshot 4" class="modal-img">
+            
+        </div>
+    </section>
+    
+    <section class="cta">
+        <h2>Call to Action</h2>
+        <p>Explore the code on GitHub to see how the Book Store App is built, and feel free to provide feedback or contribute. If you're interested in a demo or have questions about the app, don't hesitate to reach out!</p>
+    </section>
+</div>
+
+<!-- Modal for enlarged images -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var img = document.querySelectorAll(".modal-img");
+    var modalImg = document.getElementById("img01");
+    var span = document.getElementsByClassName("close")[0];
+
+    img.forEach(function(image) {
+        image.onclick = function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+        }
+    });
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
